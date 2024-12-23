@@ -1,0 +1,320 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+::after,
+::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.wrapper a{
+    text-decoration: none;
+    color: white
+}
+.wrapper li{
+    list-style: none;
+}
+h1{
+    font-weight: bold;
+    font-size: 1.5rem;
+    
+}
+body{
+    font-family: 'Montserrat' ,sans-serif;
+    height: 100%;
+}
+.wrapper{
+    display: flex;
+}
+
+.main{
+    background-color: #F0F0F0;
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    transition: all 0.35s ease-in-out;  
+    margin-left: 80px;
+    
+}
+
+#sidebar{
+    width: 80px;
+    min-width: 80px;
+    z-index: 1000;
+    transition: all .35s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    background-color: #2D2A71;
+    box-shadow: 2px 0px 10px rgb(155, 155, 155);
+    position: fixed;
+    height:100vh
+}
+
+.expanded{
+    margin-left: 260px;
+}
+
+#sidebar.expand{
+    width: 260px;
+    min-width:260px;
+}
+.sidebar-item{
+    margin-top: 30px;
+    padding-left: 0px;
+}
+
+.sidebar-course{
+    margin-top: 23px;
+    padding-left: 0px;
+}
+
+.sidebar-logo{
+    margin-top: 17px;
+    margin-left: 10px;
+    margin-bottom: 36;
+    font-weight: bold;
+    font-size: x-large;
+}
+
+#toggle-btn{
+    background-color: transparent;
+    cursor: pointer;
+    border:0;
+    padding: 1.25rem .8rem;
+    margin-left:15px;
+    margin-bottom: 36;
+}
+
+#sidebar:not(.expand) .sidebar-logo,
+#sidebar:not(.expand) a.sidebar-link span{
+    display:none;
+    transition: .5s
+}
+
+.sidebar-nav{
+    padding: 1rem 0;
+    flex: 1 1 auto;
+    font-size: 16px;
+}
+
+.sidebar-nav .sidebar-link {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Beri jarak antara ikon dan teks */
+}
+
+.sidebar-logo-short {
+    font-size: 20px; /* Ukuran font tetap untuk SM */
+    transition: font-size 0.3s ease;
+}
+
+.sidebar-logo {
+    font-size: 20px; /* Ukuran font tetap untuk Manajemen Stasiun */
+    transition: font-size 0.3s ease;
+}
+
+#sidebar.expand .sidebar-logo-short {
+    display: none; /* Sembunyikan singkatan saat expand */
+}
+
+#sidebar.expand .sidebar-logo {
+    display: block; /* Tampilkan teks lengkap saat expand */
+}
+
+a.sidebar-link  {
+    padding: 1rem 1.625rem;
+    display: block;
+    font-size: 18px;
+    font-weight: normal;
+    white-space: nowrap;
+    border-left: 3px solid transparent;
+    margin-top: -2rem;
+    /* height: 50px */
+}
+
+
+ul#course .sidebar-item .sidebar-link{
+    padding: .5rem 1.625rem;
+    display: block;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    border-left: 3px solid transparent;
+    margin-top:-0.7rem; 
+    font-size: 18px;
+    font-weight: normal;
+}
+a.sidebar-link:hover,
+ul#course .sidebar-item a.sidebar-link:hover{
+    background-color: #EE6B23;
+    transition: .5s;
+}
+    
+.sidebar-item {
+    position: relative;
+}
+
+#sidebar:not(.expand) .sidebar-course .sidebar-dropdown {
+    position: absolute;
+    top: 122px ;
+    left: 80px;
+    background-color: #008DDA;
+    padding: 0;
+    min-width: 15rem;
+    display: none;
+    box-shadow: 2px 0px 10px rgb(155, 155, 155);
+}
+
+#sidebar:not(.expand) .sidebar-course:hover .has-dropdown+.sidebar-dropdown {
+    display: block;
+    max-height: 18em;
+    opacity: 1;
+    
+}
+
+.sidebar-footer {
+    margin-bottom: 64px;
+}
+
+span{
+    margin-left: 16px;
+}
+
+#sidebar.expand .sidebar-link[data-bs-toggle="collapse"]::after {
+    border: solid white;
+    border-width: 0 0.2rem 0.2rem 0;
+    content: " ";
+    display: inline-block;
+    padding: 0.3rem;
+    position: absolute;
+    top: 9rem;
+    margin-left: 90px;
+    transform: rotate(45deg);
+    transition: all .2s ease-out;
+}
+
+#sidebar.expand .sidebar-link[data-bs-toggle="collapse"].collapsed::after {
+    transform: rotate(-45deg);
+    transition: all .2s ease-out;
+}
+
+/* navbar */
+
+.atas{
+    padding: rem ;
+    background-color: #fff;
+    height: 70px;
+}
+
+#button-navbar{
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    overflow: hidden;
+    cursor: pointer;
+    border: 0;
+    margin-left: 17px;
+    
+
+}
+
+#navbarNav{
+    margin-left: -.1rem;
+}
+
+.navbar-keterangan{
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: -.75rem;
+    margin-left: -1px;
+}
+
+#hamburger-logo{
+    color: #3E424D;
+    border: 1px #3E424D solid;
+    border-radius: 5px;
+}
+
+#hamburger-logo:hover{
+    color: #fff;
+    background-color: #EE6B23;
+    transition: .35s;
+    border: 1px white solid
+}
+
+.namaUser{
+    font-weight: bold;
+    font-size: 24px;
+    margin: 0 auto;
+    margin-right: 10px;
+}
+.fotoUser{
+    margin-top:6px;
+    margin-right: 15px;
+    border-radius: 50%;
+}
+
+.sidebar-active{
+    background-color: #005F92;
+    border-left: 2px solid #003A59
+}
+
+.navbar-fixed {
+    position: fixed;
+    z-index: 9999;
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+    --tw-bg-opacity: 0.6;
+    -webkit-backdrop-filter: blur(5px);
+            backdrop-filter: blur(5px);
+    box-shadow: inset 0px -1px 0 0 rgba(0, 0, 0, 0.2);
+  }
+
+nav.navbar{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 9999;
+}
+
+
+.profile-expand{
+    transition: all 0.35s ease-in-out;  
+}
+
+.profile{
+    position: absolute; /* or fixed */
+    right: 10vh;
+    transition: all 0.35s ease-in-out;
+    top: 20px; /* Adjust as needed */
+}
+
+.content{
+    margin-top: 4rem; /* Adjust this value to match the height of your navbar */
+    padding: 1rem;
+    margin-bottom:4rem 
+}
+
+.btn-orange{
+    background-color: #EE6B23 !important;
+    color: white !important;
+}
+
+/* Styling Pagination */
+.page-link {
+    color: #000000 !important;
+    background-color: #ffffff;
+    border: 1px solid #dee2e6;
+}
+
+.page-link:hover {
+    color: #ffffff !important;
+    background-color: #EE6B23 !important;
+    border-color: #EE6B23;
+}
+
+.page-item.active .page-link {
+    color: #ffffff !important;
+    background-color: #EE6B23;
+    border-color: #EE6B23;
+    font-weight: bold;
+}
+
